@@ -1,9 +1,8 @@
-import AppHome from '@/components/AppHome';
-const AppMedium = () => import('@/components/AppMedium');
+import AppHome from '@/mytoken/components/AppHome';
+const AppMedium = () => import('@/mytoken/components/AppMedium');
 
 
-const routes = [
-    {
+const routes = [{
         path: '/',
         name: 'Home',
         component: AppHome
