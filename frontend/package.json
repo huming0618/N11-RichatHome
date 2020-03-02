@@ -5,6 +5,7 @@
   "scripts": {
     "dev:admin": "cross-env NODE_ENV=development BUILD_TARGET=admin DEV_SERVER_PORT=9000 webpack-dev-server --progress",
     "dev:mytoken": "cross-env NODE_ENV=development BUILD_TARGET=mytoken DEV_SERVER_PORT=8080 webpack-dev-server --progress",
+    "dev:home": "cross-env NODE_ENV=development BUILD_TARGET=home DEV_SERVER_PORT=8000 webpack-dev-server --progress",
     "staging": "cross-env NODE_ENV=staging webpack",
     "build": "cross-env NODE_ENV=production webpack"
   },
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/samteb/vue-2-webpack-4-boilerplate",
   "dependencies": {
     "@babel/polyfill": "~7.2",
+    "ant-design-vue": "^1.4.11",
     "vue": "~2.6",
     "vue-router": "~3.0"
   },
@@ -50,7 +52,7 @@
     "friendly-errors-webpack-plugin": "~1.7",
     "html-webpack-plugin": "~3.2",
     "mini-css-extract-plugin": "~0.5",
-    "node-sass": "~4.12",
+    "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "~5.0",
     "sass-loader": "~7.1",
     "uglifyjs-webpack-plugin": "~1.2",

@@ -1,5 +1,7 @@
 <template>
-  <h1>Admin Home Page</h1>
+  <div>
+    <a-button type="primary">Primary</a-button>
+  </div>
 </template>
 
 <script>

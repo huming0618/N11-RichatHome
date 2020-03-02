@@ -1,0 +1,93 @@
+Arguments: 
+  /Users/peter/.nvm/versions/node/v11.10.0/bin/node /usr/local/Cellar/yarn/1.6.0/libexec/bin/yarn.js add node-sass
+
+PATH: 
+  /Users/peter/flutter/bin:/usr/local/opt/ruby/bin:/Users/peter/anaconda3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/peter/.sdkman/candidates/gradle/current/bin:/Users/peter/.nvm/versions/node/v11.10.0/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/Users/peter/Desktop/workspace/flutter-1.0.0/bin:/Users/peter/pear/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/peter/flutter/bin:/usr/local/go/bin:/usr/local/share/dotnet:/opt/X11/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/peter/Desktop/workspace/Tools/apache-maven-3.3.3/bin:/Users/peter/Desktop/Tools/adt-bundle-mac-x86_64-20131030/sdk/platform-tools:/Users/peter/Desktop/Tools/adt-bundle-mac-x86_64-20131030/sdk/tools
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  11.10.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: EACCES: permission denied, mkdir '/Users/peter/Desktop/workspace/richathome/frontend/node_modules/abbrev'
+
+npm manifest: 
+  {
+    "name": "vue-2-webpack-4-boilerplate",
+    "version": "1.0.0",
+    "description": "Vue 2 application with webpack 4 boilerplate",
+    "scripts": {
+      "dev:admin": "cross-env NODE_ENV=development BUILD_TARGET=admin DEV_SERVER_PORT=9000 webpack-dev-server --progress",
+      "dev:mytoken": "cross-env NODE_ENV=development BUILD_TARGET=mytoken DEV_SERVER_PORT=8080 webpack-dev-server --progress",
+      "staging": "cross-env NODE_ENV=staging webpack",
+      "build": "cross-env NODE_ENV=production webpack"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/samteb/vue-2-webpack-4-boilerplate"
+    },
+    "keywords": [
+      "Vue",
+      "Webpack 4"
+    ],
+    "author": "samteb <sam.teboul@gmail.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/samteb/vue-2-webpack-4-boilerplate",
+    "dependencies": {
+      "@babel/polyfill": "~7.2",
+      "ant-design-vue": "^1.4.11",
+      "vue": "~2.6",
+      "vue-router": "~3.0"
+    },
+    "devDependencies": {
+      "@babel/core": "~7.2",
+      "@babel/plugin-proposal-class-properties": "~7.3",
+      "@babel/plugin-proposal-decorators": "~7.3",
+      "@babel/plugin-proposal-json-strings": "~7.2",
+      "@babel/plugin-syntax-dynamic-import": "~7.2",
+      "@babel/plugin-syntax-import-meta": "~7.2",
+      "@babel/preset-env": "~7.3",
+      "babel-eslint": "~10.0",
+      "babel-loader": "~8.0",
+      "compression-webpack-plugin": "~2.0",
+      "cross-env": "~5.2",
+      "css-loader": "~2.1",
+      "eslint": "~5.16",
+      "eslint-config-standard": "~10.2",
+      "eslint-friendly-formatter": "~3.0",
+      "eslint-loader": "~2.1",
+      "eslint-plugin-html": "~3.0",
+      "eslint-plugin-import": "~2.14",
+      "eslint-plugin-node": "~4.2",
+      "eslint-plugin-promise": "~3.5",
+      "eslint-plugin-standard": "~3.0",
+      "eslint-plugin-vue": "~5.1",
+      "friendly-errors-webpack-plugin": "~1.7",
+      "html-webpack-plugin": "~3.2",
+      "mini-css-extract-plugin": "~0.5",
+      "node-sass": "~4.12",
+      "optimize-css-assets-webpack-plugin": "~5.0",
+      "sass-loader": "~7.1",
+      "uglifyjs-webpack-plugin": "~1.2",
+      "vue-loader": "~15.6",
+      "vue-style-loader": "~4.1",
+      "vue-template-compiler": "~2.6",
+      "webpack": "~4.29",
+      "webpack-bundle-analyzer": "~3.3",
+      "webpack-cli": "~3.2",
+      "webpack-dev-server": "~3.1",
+      "webpack-hot-middleware": "~2.24",
+      "webpack-merge": "~4.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
