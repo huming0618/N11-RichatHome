@@ -7,7 +7,7 @@
     "dev:mytoken": "cross-env NODE_ENV=development BUILD_TARGET=mytoken DEV_SERVER_PORT=8080 webpack-dev-server --progress",
     "dev": "cross-env NODE_ENV=development BUILD_TARGET=home DEV_SERVER_PORT=8000 webpack-dev-server --progress",
     "staging": "cross-env NODE_ENV=staging webpack",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production BUILD_TARGET=home webpack"
   },
   "repository": {
     "type": "git",
