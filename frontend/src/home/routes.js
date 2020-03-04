@@ -1,16 +1,16 @@
-import AppHome from '@/home/components/AppHome';
+import Dashboard from '@/home/components/Dashboard';
 const AppMedium = () => import('@/home/components/AppMedium');
-
+const Task = () => import('@/admin/components/Task')
 
 const routes = [{
         path: '/',
-        name: 'Home',
-        component: AppHome
+        name: 'Dashboard',
+        component: Dashboard
     },
     {
-        path: '/medium',
-        name: 'Medium',
-        component: AppMedium
+        path: '/newtask',
+        name: 'NewTask',
+        component: Task
     }
 ];
 
