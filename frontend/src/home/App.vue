@@ -26,7 +26,6 @@ import AppHeader from "@/home/components/AppHeader";
 import Dashboard from "@/home/components/Dashboard";
 import MySummary from "@/mytoken/components/Summary";
 
-
 export default {
   components: {
     AppHeader,
