@@ -24,11 +24,11 @@
     "@babel/polyfill": "~7.2",
     "ant-design-vue": "^1.4.11",
     "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
     "vue": "~2.6",
     "vue-router": "~3.0"
   },
   "devDependencies": {
-    "awesome-typescript-loader": "^5.2.1",
     "@babel/core": "~7.2",
     "@babel/plugin-proposal-class-properties": "~7.3",
     "@babel/plugin-proposal-decorators": "~7.3",
@@ -36,6 +36,7 @@
     "@babel/plugin-syntax-dynamic-import": "~7.2",
     "@babel/plugin-syntax-import-meta": "~7.2",
     "@babel/preset-env": "~7.3",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-eslint": "~10.0",
     "babel-loader": "~8.0",
     "compression-webpack-plugin": "~2.0",

@@ -51,12 +51,18 @@
   </a-col>
 </template>
 <script>
+import Project from "@/common/entity/project";
+
 export default {
   props: {
     show: {
       type: Boolean,
       default: false
     }
+  },
+  mounted() {
+    const newProject = new Project();
+    console.log("project", newProject);
   },
   methods: {
     onChange() {}
