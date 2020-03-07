@@ -25,6 +25,8 @@
   height: 31px;
   line-height: 31px;
   background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding-left: 6px;
   margin: 16px 24px 16px 0;
   float: left;
 }

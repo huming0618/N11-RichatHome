@@ -3,9 +3,61 @@
     :style="{ background: '#fff', marginTop: '20px', padding: '10px', minHeight: '60px' }"
   >
     <a-row>
-      <a-col :span="8">参与任务：10个</a-col>
-      <a-col :span="8">账户地址 7g5furo9ejf...</a-col>
-      <a-col :span="8">积分数量：15000个</a-col>
+      <a-col :span="6">
+        <dl class="block">
+          <dt>
+            <icon-font type="icon-facebook" />参与任务
+          </dt>
+          <dd>10个</dd>
+        </dl>
+      </a-col>
+      <a-col :span="6">
+        <dl class="block">
+          <dt>账户地址</dt>
+          <dd>{{address}}</dd>
+        </dl>
+      </a-col>
+      <a-col :span="6">
+        <dl class="block">
+          <dt>积分数量</dt>
+          <dd>15000个</dd>
+        </dl>
+      </a-col>
+      <a-col :span="6">
+        <dl class="block">
+          <dt>账户余额</dt>
+          <dd>{{balance}} ELA</dd>
+        </dl>
+      </a-col>
     </a-row>
   </a-layout-content>
 </template>
+<style scoped>
+.block {
+  text-align: center;
+}
+</style>
+<script>
+import wallet from "@/common/Wallet";
+export default {
+  data() {
+    return {
+      address: wallet.address,
+      balance: wallet.balance
+    };
+  },
+  mounted() {
+    wallet.init().then(result => {
+      console.log("my.wallet", wallet);
+      if (result) {
+        this.address = wallet.address;
+        this.balance = wallet.balance;
+      }
+    });
+    // console.log("wallet", wallet);
+    // this.address = wallet.address;
+    // this.balance = wallet.balance;
+    // this.address =
+  }
+};
+</script>

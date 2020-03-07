@@ -8,10 +8,11 @@ import Antd from 'ant-design-vue'
 // Import Vue App, routes, store
 import App from './App';
 import routes from './routes';
-
+import wallet from "@/common/Wallet";
 Vue.use(VueRouter);
 Vue.use(Antd)
 
+wallet.init()
 // Configure router
 const router = new VueRouter({
     routes,

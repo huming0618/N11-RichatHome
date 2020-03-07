@@ -23,10 +23,12 @@
   "dependencies": {
     "@babel/polyfill": "~7.2",
     "ant-design-vue": "^1.4.11",
+    "source-map-loader": "^0.2.4",
     "vue": "~2.6",
     "vue-router": "~3.0"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
     "@babel/core": "~7.2",
     "@babel/plugin-proposal-class-properties": "~7.3",
     "@babel/plugin-proposal-decorators": "~7.3",
@@ -55,6 +57,7 @@
     "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "~5.0",
     "sass-loader": "~7.1",
+    "typescript": "^3.8.3",
     "uglifyjs-webpack-plugin": "~1.2",
     "vue-loader": "~15.6",
     "vue-style-loader": "~4.1",

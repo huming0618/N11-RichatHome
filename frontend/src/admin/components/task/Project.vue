@@ -1,10 +1,10 @@
 <template>
-  <a-col :span="17" :offset="3">
+  <a-col :span="17" :offset="3" v-show="show">
     <a-form-item label="任务名称" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
       <a-input
         v-decorator="[
           'name',
-          {rules: [{ required: true, message: '名称' }]}
+          {rules: [{ required: true, message: '任务名称' }]}
         ]"
       />
     </a-form-item>
@@ -50,3 +50,16 @@
     </a-form-item>-->
   </a-col>
 </template>
+<script>
+export default {
+  props: {
+    show: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    onChange() {}
+  }
+};
+</script>

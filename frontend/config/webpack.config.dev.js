@@ -11,7 +11,8 @@ const port = process.env.DEV_SERVER_PORT || 8080
 module.exports = env => {
     return merge(commonConfig, {
         mode: 'development',
-        devtool: 'cheap-module-eval-source-map',
+        devtool: 'inline-source-map',
+        // devtool: 'cheap-module-eval-source-map',
         output: {
             path: helpers.root('dist'),
             publicPath: '/',

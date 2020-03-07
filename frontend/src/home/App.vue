@@ -22,6 +22,8 @@
 }
 </style>
 <script>
+import wallet from "@/common/Wallet";
+
 import AppHeader from "@/home/components/AppHeader";
 import Dashboard from "@/home/components/Dashboard";
 import MySummary from "@/mytoken/components/Summary";
@@ -37,6 +39,12 @@ export default {
       console.log("test", this.$router);
       this.$router.push({ name: "NewTask" });
     }
+  },
+
+  mounted() {
+    // wallet.init().then(result => {
+    //   console.log("my.wallet", wallet);
+    // });
   },
 
   data() {

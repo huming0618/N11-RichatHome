@@ -8,7 +8,11 @@
           <a-step :key="step3" :title="项目信息" />
         </a-steps>-->
         <a-menu v-model="current" mode="horizontal">
-          <a-menu-item key="basic" :style="{width:'33.3%', textAlign:'center'}">
+          <a-menu-item
+            key="project"
+            :style="{width:'33.3%', textAlign:'center'}"
+            @click="onSelectTab"
+          >
             <!-- <a-icon type="basic" /> -->
             <a-icon type="project" />项目信息
           </a-menu-item>
@@ -22,9 +26,9 @@
       </a-col>
     </a-row>
     <a-row :style="{ marginTop: '60px' }">
-      <ProjectForm />
-      <!-- <VeriyForm />
-      <ExchangeForm />-->
+      <ProjectForm :show="current[0]==='project'" />
+      <VeriyForm :show="current[0]==='manage'" />
+      <ExchangeForm :show="current[0]==='exchange'" />
     </a-row>
     <a-row :style="{ marginTop: '30px' }">
       <a-form-item :wrapper-col="{ span: 17, offset: 3 }">
@@ -44,12 +48,16 @@ export default {
   components: { ProjectForm, VeriyForm, ExchangeForm },
   data() {
     return {
-      current: ["basic"],
+      current: ["project"], //project,manage,exchange
       formLayout: "horizontal",
       form: this.$form.createForm(this)
     };
   },
   methods: {
+    onSelectTab: function(key) {
+      this.current = [key];
+    },
+
     handleSubmit(e) {
       e.preventDefault();
       this.form.validateFields((err, values) => {
