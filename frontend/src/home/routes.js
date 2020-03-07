@@ -1,5 +1,5 @@
 import Dashboard from '@/home/components/Dashboard';
-const Task = () => import('@/admin/components/Task')
+const Task = () => import('@/admin/components/task')
 
 const routes = [{
         path: '/',

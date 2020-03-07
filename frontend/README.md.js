@@ -1,17 +1,20 @@
 ###
 API Base Host: api - richathome.elapps.net
 
-``
-`
+
 fetch('http://39.105.68.35/api/project/search', {
-    method: 'post',
-    headers: {
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify({key:'',PageSize:30,PageNumber:0,Order:'ASC'})
-}).then(x=>x.json()).then(data=>console.log(data))
-`
-``
+  method: 'post',
+  headers: {
+    'content-type': 'application/json'
+  },
+  body: JSON.stringify({
+    key: '',
+    PageSize: 30,
+    PageNumber: 0,
+    Order: 'ASC'
+  })
+}).then(x => x.json()).then(data => console.log(data))
+
 
 //提交项目信息
 let project = {
@@ -71,16 +74,33 @@ fetch('http://39.105.68.35/api/task/search', {
 }).then(x => x.json()).then(data => console.log(data))
 
 //提交工作量证明签名
-let taskSign = {
-  id: '222',
-  PageSize: 2,
-  PageNumber: 0,
-  Order: 'ASC'
+let task = {
+  project_id: '222', //string
+  project_name: 2,
+  contributer_wallet: '', //贡献者钱包地址
+  contributer_info: '', //贡献者身份附加信息 (200字),
+  submit_time: '', //提交时间
+  task_info: '', //工作描述（1000字)
+  verifier_pubkey: ['', ''], //验证人公钥（多个）
+  verifier_wallet: [''], //验证人地址（多个）
+  verifier_sign: [''], //验证人签名
+  status: '', //状态（已提交，已签名，已发放）
+  tx_hash: '', //发放交易HASH
+  tx_time: '', //发放时间
+  tx_token_num: '' //发放积分数量
+  //文件附件（多个）
 }
-fetch('http://39.105.68.35/api/task/search', {
+
+let formData = new FormData()
+formData.append('file', new Blob(['Hello World!\n']))
+for (let k in task) {
+  formData.append(k, task[k])
+}
+
+fetch('http://39.105.68.35/api/task', {
   method: 'post',
   headers: {
-    'content-type': 'application/json'
+    'content-type': 'multipart/form-data'
   },
-  body: JSON.stringify(taskQuery)
+  body: formData
 }).then(x => x.json()).then(data => console.log(data))
