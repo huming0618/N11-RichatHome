@@ -11,14 +11,25 @@ class UIHelper {
         project.budget = formValues['budget']
         project.contract = ''//contractAddress
 
-        project.exchange_time = formValues['exchangePeriodType']
+
         project.info = formValues['info']
         project.name = formValues['name']
-        project.point_token_num = formValues['point_token_num']
-        project.point_token_symbol = formValues['point_token_symbol']
+
         project.rate = formValues['rate']
-        project.reward_token_num = formValues['reward_token_num']
-        project.reward_token_symbol = formValues['reward_token_symbol']
+
+        if (formValues['exchangeType'] == 'pool') {
+            project.exchange_time = formValues['exchangePeriodType']
+            project.reward_token_num = formValues['total_budget']
+            project.reward_token_symbol = formValues['token_symbol']
+            project.budget = formValues['pool_budget']
+        }
+        else if (formValues['exchangeType'] == 'fixed') {
+            project.budget = formValues['total_budget']
+            project.point_token_num = formValues['total_budget']
+            project.point_token_symbol = formValues['token_symbol']
+        }
+
+
         project.sender_name = formValues['sender_name']
         project.sender_url = formValues['sender_url']
         project.start_date = formValues['projectDateRange'][0].format('YYYY-MM-DD');

@@ -1,6 +1,22 @@
 <template>
   <a-col :span="17" :offset="3" v-show="show">
-    <a-form-item label="类型：" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
+    <a-form-item label="积分名称" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
+      <a-input
+        v-decorator="[
+          'token_symbol',
+          {rules: [{ required: true, message: '*' }]}
+        ]"
+      />
+    </a-form-item>
+    <a-form-item label="数量" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
+      <a-input
+        v-decorator="[
+          'total_budget',
+          {rules: [{ required: true, message: '数量' }]}
+        ]"
+      />
+    </a-form-item>
+    <a-form-item label="兑换类型：" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
       <a-radio-group
         @change="onExchangeTypeChange"
         buttonStyle="solid"
@@ -14,7 +30,26 @@
         <a-radio-button value="pool">瓜分奖金池</a-radio-button>
       </a-radio-group>
     </a-form-item>
-    <a-form-item label="兑换周期：" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
+    <a-form-item
+      label="兑换比率"
+      :label-col="{ span: 5 }"
+      :wrapper-col="{ span: 12 }"
+      v-show="type=='fixed' || type=='pool' "
+    >
+      <a-input
+        v-decorator="[
+          'rate',
+          {rules: [{ required: true, message: '*' }]}
+        ]"
+      />
+    </a-form-item>
+
+    <a-form-item
+      label="兑换周期："
+      :label-col="{ span: 5 }"
+      :wrapper-col="{ span: 12 }"
+      v-show="type=='pool'"
+    >
       <a-select
         name="exchangePeriodType"
         v-decorator="[
@@ -29,19 +64,16 @@
         <a-select-option value="year">每年</a-select-option>
       </a-select>
     </a-form-item>
-    <a-form-item label="积分" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
+    <a-form-item
+      label="每期奖励币数量"
+      :label-col="{ span: 5 }"
+      :wrapper-col="{ span: 12 }"
+      v-show="type=='pool'"
+    >
       <a-input
         v-decorator="[
-          'detail',
-          {rules: [{ required: true, message: '任务描述' }]}
-        ]"
-      />
-    </a-form-item>
-    <a-form-item label="每期奖励币数量" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
-      <a-input
-        v-decorator="[
-          'detail',
-          {rules: [{ required: true, message: '发包方' }]}
+          'pool_budget',
+          {initValue:'0', rules: [{ required: false, message: '每期奖励币数量' }]}
         ]"
       />
     </a-form-item>
@@ -59,9 +91,16 @@ export default {
       default: function() {}
     }
   },
+  data() {
+    return {
+      type: ""
+    };
+  },
+
   methods: {
     onExchangeTypeChange(selected) {
-      //console.log(`selected `, selected.target.value);
+      console.log(`selected `, selected.target.value);
+      this.type = selected.target.value;
     }
   }
 };
