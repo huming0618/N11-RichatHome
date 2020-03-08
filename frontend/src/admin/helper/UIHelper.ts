@@ -3,13 +3,30 @@ import APIService from '../../common/APIService';
 import wallet from '../../common/wallet/Wallet'
 
 class UIHelper {
-    static submitNewProject(formValues: any) {
+    static createNewProjectContract() {
+        return new Promise((resolve) => {
+            wallet.init().then(result => {
+                console.log("my.wallet", wallet);
+                if (result) {
+                    var ss = wallet.getContractObj("AgentBuilder");
+                    console.log("===========" + JSON.stringify(ss));
+                    wallet.depoyContract(ss["abi"], ss["bytecode"], wallet.address).then((address) => {
+                        console.log("address" + address);
+                        resolve(address)
+                    })
+                }
+            }).catch(e => console.error(e))
+        })
+
+    }
+
+    static submitNewProject(formValues: any, contractAddress: string) {
 
         const project = new Project()
         project.admin_addressl = formValues['admin_addressl']
         project.admin_pubkeyl = formValues['admin_pubkeyl']
         project.budget = formValues['budget']
-        project.contract = ''//contractAddress
+        project.contract = contractAddress//contractAddress
 
 
         project.info = formValues['info']
@@ -37,16 +54,15 @@ class UIHelper {
         project.verifier_address = [formValues['verifier_address']]
         project.verifier_pubkey = [formValues['verifier_pubkey']]
         console.log('formValues', formValues, project)
-        // wallet.init().then(result => {
-        //     console.log("my.wallet", wallet);
-        //     if (result) {
-        //         var ss = wallet.getContractObj("AgentBuilder");
-        //         console.log("===========" + JSON.stringify(ss));
-        //         wallet.depoyContract(ss["abi"], ss["bytecode"], wallet.address).then((address) => {
-        //             console.log("address" + address);
-        //         })
-        //     }
-        // });
+
+
+        return fetch('http://39.105.68.35/api/project', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(project)
+        }).then(x => x.json())
         // const newProject = new Project()
         // APIService.createProject(newProject)
     }

@@ -24,7 +24,7 @@
       <a-col :span="6">
         <dl class="block">
           <dt>账户余额</dt>
-          <dd>{{balance}} ELA</dd>
+          <dd>{{balance}}</dd>
         </dl>
       </a-col>
     </a-row>
