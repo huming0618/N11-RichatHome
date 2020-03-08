@@ -5,9 +5,7 @@
     <a-row>
       <a-col :span="6">
         <dl class="block">
-          <dt>
-            <icon-font type="icon-facebook" />参与任务
-          </dt>
+          <dt>参与任务</dt>
           <dd>10个</dd>
         </dl>
       </a-col>
@@ -38,7 +36,7 @@
 }
 </style>
 <script>
-import wallet from "@/common/Wallet";
+import wallet from "@/common/wallet";
 export default {
   data() {
     return {

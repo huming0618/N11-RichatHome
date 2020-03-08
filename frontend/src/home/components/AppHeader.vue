@@ -38,13 +38,6 @@ export default {
       console.log("test", this.$router);
       this.$router.push({ name: "NewTask" });
     }
-  },
-
-  data() {
-    return {
-      data,
-      columns
-    };
   }
 };
 </script>

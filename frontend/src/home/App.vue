@@ -22,7 +22,7 @@
 }
 </style>
 <script>
-import wallet from "@/common/Wallet";
+import wallet from "@/common/wallet";
 
 import AppHeader from "@/home/components/AppHeader";
 import Dashboard from "@/home/components/Dashboard";
@@ -45,13 +45,6 @@ export default {
     // wallet.init().then(result => {
     //   console.log("my.wallet", wallet);
     // });
-  },
-
-  data() {
-    return {
-      data,
-      columns
-    };
   }
 };
 </script>

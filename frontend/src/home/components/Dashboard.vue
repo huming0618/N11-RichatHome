@@ -80,6 +80,9 @@ const data = [
 ];
 
 export default {
+  methods: {
+    onChange() {}
+  },
   data() {
     return {
       data,

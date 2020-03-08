@@ -11,7 +11,7 @@
     <a-form-item label="任务描述" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
       <a-input
         v-decorator="[
-          'detail',
+          'info',
           {rules: [{ required: true, message: '任务描述' }]}
         ]"
       />
@@ -19,7 +19,7 @@
     <a-form-item label="发包方" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
       <a-input
         v-decorator="[
-          'detail',
+          'sender_name',
           {rules: [{ required: true, message: '发包方' }]}
         ]"
       />
@@ -27,14 +27,22 @@
     <a-form-item label="发包链接" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
       <a-input
         v-decorator="[
-          'detail',
+          'sender_url',
           {rules: [{ required: true, message: '发包链接' }]}
         ]"
       />
     </a-form-item>
     <a-form-item label="开始 / 结束时间" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
-      <a-range-picker @change="onChange" />
+      <a-range-picker
+        @change="onDateRangeChange"
+        name="projectDateRange"
+        v-decorator="[
+          'projectDateRange'
+        ]"
+      />
     </a-form-item>
+    <!-- <input type="hidden" name="projectStartDay" />
+    <input type="hidden" name="projectEndDay" />-->
     <!-- <a-form-item label="Gender" :label-col="{ span: 5 }" :wrapper-col="{ span: 12 }">
       <a-select
         v-decorator="[
@@ -58,14 +66,15 @@ export default {
     show: {
       type: Boolean,
       default: false
+    },
+    onDateRangeChange: {
+      type: Function,
+      default: function() {}
     }
   },
   mounted() {
     const newProject = new Project();
     console.log("project", newProject);
-  },
-  methods: {
-    onChange() {}
   }
 };
 </script>
