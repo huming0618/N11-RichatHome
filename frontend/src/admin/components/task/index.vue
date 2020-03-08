@@ -108,7 +108,7 @@ export default {
               this.$notification.open({
                 duration: 30,
                 message: "你的项目创建成功",
-                description: "项目ID:" + address,
+                description: "ID: " + address,
                 onClick: () => {}
               });
               //alert("你的项目创建成功。项目ID:" + address);
