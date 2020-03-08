@@ -13,9 +13,14 @@
       <a-menu-item key="2">
         <router-link to="/newtask">创建任务 +Tasks</router-link>
       </a-menu-item>
-      <a-menu-item key="3">申请奖励 +Credits</a-menu-item>
+      <a-menu-item key="3">
+        <router-link to="/applyreward">申请奖励 +Credits</router-link>
+      </a-menu-item>
       <a-menu-item key="4">兑换奖励 Exchange</a-menu-item>
-      <a-menu-item key="5">登录 Login</a-menu-item>
+      <a-menu-item key="6">
+        <router-link to="/examine">审核 +Approve</router-link>
+      </a-menu-item>
+      <a-menu-item key="7">登录 Login</a-menu-item>
     </a-menu>
   </a-layout-header>
 </template>
